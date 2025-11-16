@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
       title: "The Art of Bespoke Tailoring: A Timeless Craft",
       author: "Edow Style Team",
       date: "Nov 15, 2025",
-      img: "blog_post_1_large.jpg",
+      img: "Assests/gallery1.jpeg",
       content:
         "Bespoke tailoring is the pinnacle of personalized fashion. At Edow, it involves a meticulous 12-step process, starting with a design consultation and leading to multiple fittings. We focus on enhancing the wearer's unique physique and ensuring the garment reflects their personal style philosophy. This craft preserves heritage while utilizing modern, ethical fabrics. The final result is a garment that lasts generations, not just seasons.",
     },
@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
       title: "Sustainable Fabrics: Edow's Commitment to the Planet",
       author: "Sarah J.",
       date: "Nov 1, 2025",
-      img: "blog_post_2_large.jpg",
+      img: "Assests/gallery2.jpeg",
       content:
         "As the fashion industry evolves, our commitment to sustainability deepens. We source organic cotton, recycled polyester, and innovative plant-based textiles like Tencel and Pinatex. Our production processes minimize water usage and chemical waste, ensuring that our beautiful designs come with a clear conscience. We detail our progress in our annual sustainability report.",
     },
@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
       title: "A Guide to Building a Versatile Capsule Wardrobe",
       author: "A. Designer",
       date: "Oct 25, 2025",
-      img: "blog_post_3_large.jpg",
+      img: "Assests/gallery3.jpeg",
       content:
         "A capsule wardrobe is a curated collection of essential pieces that never go out of style. Start with 10 core items: a classic blazer, tailored trousers, two perfect shirts, and essential footwear. The key is quality over quantity, investing in pieces from brands like Edow that offer superior construction and fit. This simplifies dressing and ensures you always look effortlessly chic.",
     },

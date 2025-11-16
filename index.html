@@ -130,12 +130,36 @@
         </div>
       </section>
 
-      <section class="blog-preview content-padding">
-        <h3>Latest News & Style Insights</h3>
-        <div class="blog-grid" id="blog-preview-container"></div>
-        <p class="section-link">
-          <a href="./blog.html">Read All Posts &rarr;</a>
-        </p>
+      <section class="blog-preview-section content-padding">
+        <h3>Latest Insights & News</h3>
+
+        <div id="blog-preview-container" class="blog-grid"></div>
+
+        <div class="section-link">
+          <a href="blog.html" class="cta-button">View All Blogs &rarr;</a>
+        </div>
+
+        <div id="blogModal" class="modal">
+          <div class="modal-content">
+            <span class="close-button" id="close-blog-modal">&times;</span>
+            <img
+              id="modal-image"
+              src=""
+              alt="Blog Post Image"
+              style="
+                width: 100%;
+                height: auto;
+                display: block;
+                margin-bottom: 20px;
+              "
+            />
+            <h2 id="modal-title"></h2>
+            <p class="modal-meta">
+              By <span id="modal-author"></span> | <span id="modal-date"></span>
+            </p>
+            <div id="modal-body"></div>
+          </div>
+        </div>
       </section>
 
       <section

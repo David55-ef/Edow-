@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
       collection: "couture",
       description: "A dramatic piece from our runway collection.",
       price: 500.0,
-      img: "gallery_1.jpg",
+      img: "Assests/gallery12.jpeg",
     },
     {
       id: 102,
@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
       collection: "resort",
       description: "Hand-dyed fabric inspired by the coast.",
       price: 185.0,
-      img: "gallery_2.jpg",
+      img: "Assests/gallery17.jpeg",
     },
     {
       id: 103,
@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
       collection: "formal",
       description: "Perfectly tailored for the modern professional.",
       price: 350.0,
-      img: "gallery_3.jpg",
+      img: "Assests/gallery14.jpeg",
     },
     {
       id: 104,
@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", () => {
       collection: "resort",
       description: "Lightweight linen, perfect for warm climates.",
       price: 160.0,
-      img: "gallery_4.jpg",
+      img: "Assests/gallery15.jpeg",
     },
     {
       id: 105,
@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
       collection: "formal",
       description: "Sleek and elegant evening wear.",
       price: 280.0,
-      img: "gallery_5.jpg",
+      img: "Assests/gallery16.jpeg",
     },
     {
       id: 106,
@@ -47,7 +47,7 @@ document.addEventListener("DOMContentLoaded", () => {
       collection: "couture",
       description: "Architectural shape and unique fabric blend.",
       price: 420.0,
-      img: "gallery_6.jpg",
+      img: "Assests/gallery17.jpeg",
     },
   ];
 

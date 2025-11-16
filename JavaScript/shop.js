@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
       category: "shirts",
       size: "M",
       price: 95.0,
-      img: "assets/gallery3.jpeg",
+      img: "Assests/gallery1.jpeg",
     },
     {
       id: 2,
@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
       category: "trousers",
       size: "L",
       price: 120.0,
-      img: "gallery1.jpeg",
+      img: "Assests/gallery2.jpeg",
     },
     {
       id: 3,
@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", () => {
       category: "shoes",
       size: "XL",
       price: 180.0,
-      img: "product_shoes_1.jpg",
+      img: "Assests/gallery3.jpeg",
     },
     {
       id: 4,
@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
       category: "gowns",
       size: "S",
       price: 299.0,
-      img: "product_gown_1.jpg",
+      img: "Assests/gallery4.jpeg",
     },
     {
       id: 5,
@@ -49,7 +49,7 @@ document.addEventListener("DOMContentLoaded", () => {
       category: "shirts",
       size: "S",
       price: 110.0,
-      img: "product_shirt_2.jpg",
+      img: "Assests/gallery5.jpeg",
     },
     {
       id: 6,
@@ -57,7 +57,7 @@ document.addEventListener("DOMContentLoaded", () => {
       category: "trousers",
       size: "M",
       price: 135.0,
-      img: "gallery2.jpeg",
+      img: "Assests/gallery6.jpeg",
     },
   ];
 

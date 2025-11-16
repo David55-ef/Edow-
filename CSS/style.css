@@ -2,11 +2,12 @@
 /* CSS Variables & Global Resets      */
 /* ---------------------------------- */
 :root {
-  --color-primary: #004aad; /* Deep Blue */
-  --color-secondary: #0066cc; /* Vibrant Blue (Accent/Hover) */
+  --color-primary: #001f4f; /* Deep Blue */
+  --color-secondary: #f5f5dc; /* Vibrant Blue (Accent/Hover) */
   --color-light: #ffffff; /* Pure White */
   --color-dark: #333333; /* Dark Text */
-  --color-hover: #f0f0f0; /* Light Hover Background */
+  --color-accent: #0066cc; /* Vibrant Blue for links/CTAs */
+  --color-hover: #4a6fa5; /* Lighter Navy/Blue-Gray */
   --font-stack: "Arial", sans-serif;
   --max-width: 1200px;
   --content-padding: 60px;
@@ -337,28 +338,33 @@ h3 {
   margin-bottom: 30px;
 }
 
-/* Blog Preview */
+/* Blog Preview Styles */
 .blog-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 30px;
+  margin-bottom: 40px;
 }
 
 .blog-post-card {
   border: 1px solid var(--color-hover);
+  background-color: var(--color-primary); /* Use Navy for card background */
   overflow: hidden;
   cursor: pointer;
-  transition: box-shadow 0.3s ease;
+  transition: box-shadow 0.3s ease, transform 0.2s ease;
+  text-align: left;
 }
 
 .blog-post-card:hover {
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  transform: translateY(-5px);
 }
 
 .blog-post-card img {
   width: 100%;
   height: 200px;
   object-fit: cover;
+  display: block;
 }
 
 .blog-content {
@@ -366,15 +372,34 @@ h3 {
 }
 
 .blog-content h4 {
-  color: var(--color-primary);
+  color: var(--color-secondary); /* Title is Cream */
+  font-size: 1.2rem;
   margin-bottom: 5px;
 }
 
-.blog-content small {
+.blog-content .post-meta {
   display: block;
-  color: #888;
+  color: var(--color-hover); /* Date and Author are Light Navy */
   margin-bottom: 10px;
-  font-size: 0.8rem;
+  font-size: 0.85rem;
+}
+
+.blog-content p {
+  color: var(--color-secondary); /* Short text is Cream */
+  font-size: 0.95rem;
+}
+
+/* Modal Styling (Ensure it works with the dark theme) */
+.modal-content {
+  background-color: var(--color-primary);
+  color: var(--color-secondary);
+  /* ... (rest of modal-content from style.css) ... */
+}
+
+.modal-meta {
+  font-size: 1rem;
+  color: var(--color-hover);
+  margin-bottom: 20px;
 }
 
 /* ---------------------------------- */
@@ -655,23 +680,33 @@ h3 {
     padding: 40px 15px;
   }
 
+  /* .blog-grid {
+    grid-template-columns: 1fr; Single column on mobile */
+}
+
+/* Responsive adjustments for the grid */
+@media (max-width: 992px) {
   .blog-grid {
-    grid-template-columns: 1fr; /* Single column on mobile */
+    grid-template-columns: repeat(2, 1fr);
   }
-
-  /* Footer */
-  .main-footer {
+}
+@media (max-width: 600px) {
+  .blog-grid {
     grid-template-columns: 1fr;
-    text-align: center;
   }
+}
+/* Footer */
+.main-footer {
+  grid-template-columns: 1fr;
+  text-align: center;
+}
 
-  .footer-copyright {
-    grid-column: 1 / 2;
-    order: 10; /* Move copyright to the very bottom */
-  }
+.footer-copyright {
+  grid-column: 1 / 2;
+  order: 10; /* Move copyright to the very bottom */
+}
 
-  .footer-social {
-    order: 1; /* Move social media up */
-    margin-bottom: 20px;
-  }
+.footer-social {
+  order: 1; /* Move social media up */
+  margin-bottom: 20px;
 }

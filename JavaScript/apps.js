@@ -40,69 +40,90 @@ document.addEventListener("DOMContentLoaded", () => {
   // Start the slideshow
   setInterval(nextSlide, 5000); // Change image every 5 seconds
 
-  // --- 4. Blog Preview & Modal Logic (Static Placeholder Data) ---
+  // --- 4. Blog Preview & Modal Logic ---
+
+  // Updated Blog Data with image paths and full text
   const blogData = [
     {
+      id: 1,
       title: "The Art of Bespoke Tailoring",
       author: "Edow Style Team",
       date: "Nov 15, 2025",
+      img: "Assests/gallery11.jpeg",
       snippet:
         "Discover the timeless process of custom garment creation, focusing on fit and fabric quality.",
       fullText:
-        "At Edow, bespoke tailoring is a journey of collaboration. We start with a consultation, moving to precise measurements and selecting from our curated library of ethical fabrics. The result is a garment that is uniquely yours, embodying perfection in every stitch. This is more than just clothing; it’s an extension of your identity.",
+        "At Edow, bespoke tailoring is a journey of collaboration. We start with a consultation, moving to precise measurements and selecting from our curated library of ethical fabrics. The result is a garment that is uniquely yours, embodying perfection in every stitch. This is more than just clothing; it’s an extension of your identity. We are committed to a minimum of two fittings to ensure unparalleled quality.",
     },
     {
+      id: 2,
       title: "Sustainable Fashion Trends for Winter '26",
       author: "Sarah J.",
       date: "Nov 1, 2025",
+      img: "Assests/gallery15.jpeg",
       snippet:
         "Exploring eco-friendly materials and ethical production methods driving the next season's styles.",
       fullText:
-        "Sustainability is at the core of Edow's future. Our Winter '26 collection utilizes recycled wools and innovative plant-based fibers. We believe in transparency and traceable sourcing, ensuring that every purchase supports responsible environmental practices.",
+        "Sustainability is at the core of Edow's future. Our Winter '26 collection utilizes recycled wools and innovative plant-based fibers like Tencel. We believe in transparency and traceable sourcing, ensuring that every purchase supports responsible environmental practices and reduces our collective footprint.",
     },
     {
+      id: 3,
       title: "How to Build a Capsule Wardrobe",
       author: "A. Designer",
       date: "Oct 25, 2025",
+      img: "Assests/gallery17.jpeg",
       snippet:
         "A guide to curating essential, versatile pieces that maximize your style with minimal effort.",
       fullText:
-        "A capsule wardrobe saves time, space, and money. Focus on high-quality, neutral pieces—like a perfect pair of Edow trousers or a versatile navy blazer—that can be mixed and matched. Less is truly more when the pieces are built to last.",
+        "A capsule wardrobe saves time, space, and money. Focus on high-quality, neutral pieces—like a perfect pair of Edow trousers or a versatile navy blazer—that can be mixed and matched across seasons. The key is to invest in pieces built to last, making sure your foundational items are of superior construction and timeless design.",
     },
   ];
 
   const blogContainer = document.getElementById("blog-preview-container");
   const modal = document.getElementById("blogModal");
-  const closeBtn = document.querySelector(".close-button");
+  const closeBtn = document.getElementById("close-blog-modal");
+
+  // Modal Content Elements
+  const modalImage = document.getElementById("modal-image");
   const modalTitle = document.getElementById("modal-title");
   const modalAuthor = document.getElementById("modal-author");
   const modalDate = document.getElementById("modal-date");
   const modalBody = document.getElementById("modal-body");
 
-  // Populate Blog Previews
-  blogData.forEach((post, index) => {
-    const card = document.createElement("div");
-    card.className = "blog-post-card";
-    card.innerHTML = `
-            <img src="blog${index + 1}.jpg" alt="${post.title}">
+  // Function to render the blog cards
+  const renderBlogPosts = () => {
+    blogData.forEach((post) => {
+      const card = document.createElement("div");
+      card.className = "blog-post-card";
+
+      card.innerHTML = `
+            <img src="${post.img}" alt="${post.title}">
             <div class="blog-content">
                 <h4>${post.title}</h4>
-                <small>By ${post.author} | ${post.date}</small>
+                <small class="post-meta">By ${post.author} | ${post.date}</small>
                 <p>${post.snippet}</p>
             </div>
         `;
 
-    // Modal Event Listener
-    card.addEventListener("click", () => {
-      modalTitle.textContent = post.title;
-      modalAuthor.textContent = post.author;
-      modalDate.textContent = post.date;
-      modalBody.innerHTML = `<p>${post.fullText}</p>`;
-      modal.style.display = "block";
-    });
+      // Click handler to open the modal
+      card.addEventListener("click", () => {
+        // Populate modal with full details
+        modalImage.src = post.img;
+        modalImage.alt = post.title;
+        modalTitle.textContent = post.title;
+        modalAuthor.textContent = post.author;
+        modalDate.textContent = post.date;
+        modalBody.innerHTML = `<p>${post.fullText}</p>`;
 
-    blogContainer.appendChild(card);
-  });
+        modal.style.display = "block";
+      });
+
+      blogContainer.appendChild(card);
+    });
+  };
+
+  // Initial rendering of the posts
+  renderBlogPosts();
 
   // Close Modal Events
   closeBtn.onclick = function () {
@@ -123,21 +144,29 @@ document.addEventListener("DOMContentLoaded", () => {
     contactForm.reset();
   });
 
-  // --- 6. Gallery Modal (for the small image preview section) ---
-  // Note: The modal for the gallery is the same as the blog modal for simplicity
-  const galleryItems = document.querySelectorAll(".gallery-item");
+  // --- 6. Gallery Modal (Modified to hide blog specific elements) ---
+  const galleryItems = document.querySelectorAll(".gallery-item"); // Make sure the read-more-modal button is displayed for blog posts
+  const readMoreButton = document.querySelector(".read-more-modal");
 
   galleryItems.forEach((item) => {
     item.addEventListener("click", () => {
       const imgSrc = item.querySelector("img").src;
-      const imgAlt = item.querySelector("img").alt;
+      const imgAlt = item.querySelector("img").alt; // Setting the Modal Content for Gallery Item
 
       modalTitle.textContent = "Design Preview";
       modalAuthor.textContent = "Edow Collection";
       modalDate.textContent = "Current Line";
       modalBody.innerHTML = `<img src="${imgSrc}" alt="${imgAlt}" style="width: 100%; display: block; margin: 10px 0;">`;
-      document.querySelector(".read-more-modal").style.display = "none"; // Hide read more button
+      readMoreButton.style.display = "none"; // Hide read more button for gallery
       modal.style.display = "block";
+    });
+  });
+
+  // Small fix: Ensure Read More button is visible when a blog post is clicked
+  // We can add a line inside the card.addEventListener for the blog posts:
+  document.querySelectorAll(".blog-post-card").forEach((card) => {
+    card.addEventListener("click", () => {
+      readMoreButton.style.display = "block";
     });
   });
 });
