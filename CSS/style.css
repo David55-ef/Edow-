@@ -11,6 +11,7 @@
   --font-stack: "Arial", sans-serif;
   --max-width: 1200px;
   --content-padding: 60px;
+  --color-prime: #000000;
 }
 
 * {
@@ -154,7 +155,7 @@ a:hover {
 .hero-content {
   position: relative;
   z-index: 2;
-  color: var(--color-secondary); /* Text color is cream */
+  color: var(--color-prime); /* Text color is cream */
   /* --- REMOVED BOX BACKGROUND AS REQUESTED --- */
   background-color: transparent;
   padding: 0; /* Remove padding associated with the box */
@@ -351,7 +352,9 @@ h3 {
   background-color: var(--color-primary); /* Use Navy for card background */
   overflow: hidden;
   cursor: pointer;
-  transition: box-shadow 0.3s ease, transform 0.2s ease;
+  transition:
+    box-shadow 0.3s ease,
+    transform 0.2s ease;
   text-align: left;
 }
 
